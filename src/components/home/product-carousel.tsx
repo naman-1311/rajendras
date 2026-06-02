@@ -40,7 +40,7 @@ const ProductCarousel = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % PRODUCTS.length);
-    }, 2000);
+    }, 3000);
     return () => clearInterval(timer);
   }, []);
 

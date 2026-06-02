@@ -40,9 +40,9 @@ const Navbar = () => {
             <Image
               src="/logo/header logo.png"
               alt="Rajendra's Logo"
-              width={205}
-              height={48}
-              className="h-9 w-auto object-contain lg:h-[44px] mix-blend-lighten"
+              width={260}
+              height={60}
+              className="h-[44px] w-auto object-contain lg:h-[56px] mix-blend-lighten"
               priority
             />
           </Link>
@@ -68,7 +68,7 @@ const Navbar = () => {
         {/* WhatsApp CTA + Mobile hamburger — padded from right */}
         <div className="ml-auto pr-6 lg:pr-12 flex items-center gap-3">
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/919176048429"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden lg:flex items-center gap-2 rounded-full bg-green-500 px-4 py-[8px] text-[12px] font-medium text-white transition-colors duration-200 hover:bg-green-400 shadow-md shadow-green-900/30"
@@ -106,7 +106,7 @@ const Navbar = () => {
               </Link>
             ))}
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/919176048429"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 flex items-center gap-2 bg-green-600 text-white text-sm font-semibold px-4 py-3 rounded-md justify-center"

@@ -149,8 +149,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wider text-[#0a0a0a]/40 font-body mb-1">Phone</p>
-                      <p className="text-[#0a0a0a] font-body text-sm">+91 98765 43210</p>
-                      <p className="text-[#0a0a0a] font-body text-sm">+91 98765 43211</p>
+                      <p className="text-[#0a0a0a] font-body text-sm">+91 91760 48429</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -159,7 +158,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wider text-[#0a0a0a]/40 font-body mb-1">Email</p>
-                      <p className="text-[#0a0a0a] font-body text-sm">info@rajendras.com</p>
+                      <p className="text-[#0a0a0a] font-body text-sm">gururajendras@yahoo.com</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -169,7 +168,7 @@ export default function ContactPage() {
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wider text-[#0a0a0a]/40 font-body mb-1">Address</p>
                       <p className="text-[#0a0a0a] font-body text-sm leading-relaxed">
-                        123, Trade Center,<br />Indore, Madhya Pradesh,<br />India - 452001
+                        180/2, Govindappa Naicken St, kothawal bazaar,<br />Seven Wells South, George Town,<br />Chennai, Tamil Nadu 600001
                       </p>
                     </div>
                   </div>
@@ -178,7 +177,7 @@ export default function ContactPage() {
 
               {/* WhatsApp CTA */}
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919176048429"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-green-600 hover:bg-green-500 text-white px-6 py-4 rounded-xl transition-colors"
@@ -195,7 +194,7 @@ export default function ContactPage() {
                 <div className="text-center">
                   <MapPin size={28} className="text-[#c8a045] mx-auto mb-2" />
                   <p className="text-[#0a0a0a]/50 text-sm font-body font-semibold">Visit Us</p>
-                  <p className="text-[#0a0a0a]/30 text-xs font-body mt-1">123, Trade Center, Indore</p>
+                  <p className="text-[#0a0a0a]/30 text-xs font-body mt-1">George Town, Chennai</p>
                 </div>
               </div>
             </div>

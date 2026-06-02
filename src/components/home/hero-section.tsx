@@ -70,7 +70,7 @@ const HeroSection = () => {
               <ArrowRight size={14} />
             </Link>
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/919176048429"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-[8px] border border-white/35 bg-black/12 px-5 py-2.5 font-body text-[12px] font-semibold uppercase tracking-[0.05em] text-white transition-colors duration-200 hover:border-white/55"

@@ -5,7 +5,6 @@ import "./globals.css";
 import Layout from "@/components/hoc/main-layout";
 import Navbar from "@/components/hoc/navbar";
 import Footer from "@/components/hoc/footer";
-import WhatsAppButton from "@/components/ui/whatsapp-button";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -37,7 +36,6 @@ export default function RootLayout({ children }: Readonly<{
           <Navbar />
           <main>{children}</main>
           <Footer />
-          <WhatsAppButton />
         </Layout>
       </body>
     </html>

@@ -98,7 +98,7 @@ export default function ProductsPage() {
                     {product.desc}
                   </p>
                   <a
-                    href={`https://wa.me/919876543210?text=Hi, I'm interested in ${product.name}. Please share more details.`}
+                    href={`https://wa.me/919176048429?text=Hi, I'm interested in ${product.name}. Please share more details.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors font-body w-full justify-center"

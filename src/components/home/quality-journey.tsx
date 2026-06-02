@@ -2,13 +2,14 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ShieldCheck, Users, Package, MapPin, Handshake } from 'lucide-react';
+import { AnimatedNumber } from '@/components/ui/animated-number';
+import { ShieldCheck, Users, Package, Handshake, Leaf } from 'lucide-react';
 
 const STATS = [
-  { icon: ShieldCheck, value: '15+', label: 'YEARS OF\nEXPERIENCE' },
+  { icon: ShieldCheck, value: '30+', label: 'YEARS OF\nEXPERIENCE' },
   { icon: Users, value: '500+', label: 'HAPPY\nCLIENTS' },
-  { icon: Package, value: '1000+', label: 'PRODUCT\nVARIETIES' },
-  { icon: MapPin, value: '50+', label: 'CITIES\nSERVED' },
+  { icon: Package, value: '250+', label: 'PRODUCT\nVARIETIES' },
+  { icon: Leaf, value: '100%', label: 'FARM DIRECT\nSOURCING' },
   { icon: Handshake, value: '100%', label: 'QUALITY\nASSURED' },
 ];
 
@@ -29,7 +30,9 @@ const QualityJourney = () => {
               className="flex flex-1 flex-col items-center text-center px-4 py-8 lg:py-0 w-full"
             >
               <Icon size={32} className="text-[#1e3250] mb-4" strokeWidth={1.2} />
-              <p className="font-heading text-[42px] font-medium leading-none text-[#1e3250] mb-3">{value}</p>
+              <p className="font-heading text-[42px] font-medium leading-none text-[#1e3250] mb-3">
+                <AnimatedNumber value={value} />
+              </p>
               <p className="whitespace-pre-line font-body text-[11px] font-black uppercase tracking-[0.07em] text-[#0a0a0a]/70">
                 {label}
               </p>

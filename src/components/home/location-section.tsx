@@ -45,9 +45,9 @@ const LocationSection = () => {
                 <p className="text-[11px] font-bold tracking-[0.1em] uppercase text-[#4d9de0] mb-2 font-body">Address</p>
                 <h3 className="text-[16px] font-semibold text-[#0a0a0a] mb-1 font-body">Rajendra&apos;s</h3>
                 <p className="text-[#0a0a0a]/70 text-[14px] leading-relaxed font-body">
-                  123, Wholesale Market Road,<br />
-                  George Town, Chennai,<br />
-                  Tamil Nadu 600001
+                  180/2, Govindappa Naicken St,<br />
+                  kothawal bazaar, Seven Wells South,<br />
+                  George Town, Chennai, Tamil Nadu 600001
                 </p>
               </div>
             </div>
@@ -60,8 +60,7 @@ const LocationSection = () => {
               <div>
                 <p className="text-[11px] font-bold tracking-[0.1em] uppercase text-[#4d9de0] mb-2 font-body">Phone</p>
                 <p className="text-[#0a0a0a]/90 text-[15px] font-body">
-                  +91 98765 43210<br />
-                  +91 91234 56789
+                  +91 91760 48429
                 </p>
               </div>
             </div>
@@ -74,7 +73,7 @@ const LocationSection = () => {
               <div>
                 <p className="text-[11px] font-bold tracking-[0.1em] uppercase text-[#4d9de0] mb-2 font-body">Email</p>
                 <p className="text-[#0a0a0a]/90 text-[15px] font-body">
-                  info@rajendras.com
+                  gururajendras@yahoo.com
                 </p>
               </div>
             </div>

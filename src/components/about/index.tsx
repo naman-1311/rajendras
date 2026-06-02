@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { AnimatedNumber } from '@/components/ui/animated-number';
 import {
   ArrowRight,
   Award,
@@ -17,10 +18,10 @@ import {
 } from 'lucide-react';
 
 const STATS = [
-  { icon: ShieldCheck, value: '15+', label: 'Years of\nExperience' },
+  { icon: ShieldCheck, value: '30+', label: 'Years of\nExperience' },
   { icon: Users, value: '500+', label: 'Happy\nClients' },
-  { icon: Package, value: '1000+', label: 'Product\nVarieties' },
-  { icon: MapPin, value: '50+', label: 'Cities\nServed' },
+  { icon: Package, value: '250+', label: 'Product\nVarieties' },
+  { icon: Leaf, value: '100%', label: 'Farm Direct\nSourcing' },
   { icon: Handshake, value: '100%', label: 'Quality\nAssured' },
 ];
 
@@ -85,7 +86,7 @@ export default function AboutPage() {
               Trusted by Businesses.<br />Chosen for Quality.
             </h1>
             <p className="mb-9 font-body text-[15px] leading-[1.65] text-white/75">
-              With over 15 years of experience in the dry fruits and spices industry, Rajendra&apos;s has become a trusted name among businesses across India. Our commitment to quality, consistency, and customer satisfaction sets us apart.
+              With over 30 years of experience in the dry fruits and spices industry, Rajendra&apos;s has become a trusted name among businesses across India. Our commitment to quality, consistency, and customer satisfaction sets us apart.
             </p>
             <Link
               href="/quality"
@@ -124,7 +125,7 @@ export default function AboutPage() {
               >
                 <Icon size={46} className="mb-5 text-[#0b1830]" strokeWidth={1.45} />
                 <p className="font-heading text-[40px] font-semibold leading-none text-[#0b1830]">
-                  {value}
+                  <AnimatedNumber value={value} />
                 </p>
                 <p className="mt-3 whitespace-pre-line font-body text-[11px] font-black uppercase leading-5 tracking-[0.04em] text-[#0a0a0a]">
                   {label}
