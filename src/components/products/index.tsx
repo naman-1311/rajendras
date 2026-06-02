@@ -5,25 +5,14 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
-const CATEGORIES = ['All', 'Dry Fruits', 'Spices', 'Seeds', 'Herbs', 'Dates', 'Gift Packs'];
+const CATEGORIES = ['All', 'Dry Fruits', 'Dates'];
 
 const PRODUCTS = [
-  { name: 'Almonds', category: 'Dry Fruits', desc: 'Premium California and Indian almonds, available in multiple grades.', bg: 'from-amber-700 to-amber-900' },
-  { name: 'Cashews', category: 'Dry Fruits', desc: 'W180 to W450 grade cashews sourced from coastal farms.', bg: 'from-yellow-700 to-yellow-900' },
-  { name: 'Walnuts', category: 'Dry Fruits', desc: 'Rich, buttery walnuts from Jammu & Kashmir.', bg: 'from-stone-600 to-stone-800' },
-  { name: 'Pistachios', category: 'Dry Fruits', desc: 'Hand-selected Iranian and Indian pistachios.', bg: 'from-green-700 to-green-900' },
-  { name: 'Raisins', category: 'Dry Fruits', desc: 'Sun-dried golden and black raisins, plump and sweet.', bg: 'from-purple-700 to-purple-900' },
-  { name: 'Figs', category: 'Dry Fruits', desc: 'Premium Anjeer, soft and naturally sweet.', bg: 'from-rose-700 to-rose-900' },
-  { name: 'Apricots', category: 'Dry Fruits', desc: 'Dried apricots with a perfect balance of sweet and tart.', bg: 'from-orange-700 to-orange-900' },
-  { name: 'Cardamom', category: 'Spices', desc: 'Green cardamom from Kerala\'s finest spice estates.', bg: 'from-emerald-700 to-emerald-900' },
-  { name: 'Black Pepper', category: 'Spices', desc: 'Malabar black pepper — bold, aromatic, premium grade.', bg: 'from-zinc-600 to-zinc-900' },
-  { name: 'Turmeric', category: 'Spices', desc: 'High-curcumin turmeric from Erode and Salem.', bg: 'from-yellow-600 to-yellow-800' },
-  { name: 'Cinnamon', category: 'Spices', desc: 'Ceylon cinnamon sticks and powder, authentic origin.', bg: 'from-amber-800 to-amber-950' },
-  { name: 'Saffron', category: 'Spices', desc: 'Kashmiri Mongra saffron — the gold of spices.', bg: 'from-red-700 to-red-900' },
-  { name: 'Cumin', category: 'Spices', desc: 'Rajasthani cumin seeds — earthy, aromatic, machine-cleaned.', bg: 'from-amber-600 to-amber-800' },
-  { name: 'Dates', category: 'Dates', desc: 'Medjool, Kimia and Safawi dates for every requirement.', bg: 'from-yellow-800 to-yellow-950' },
-  { name: 'Cloves', category: 'Spices', desc: 'Whole and powder cloves, strong aroma and rich flavour.', bg: 'from-red-900 to-[#0a0a0a]' },
-  { name: 'Coriander', category: 'Spices', desc: 'Premium coriander seeds and powder, bulk supply available.', bg: 'from-lime-700 to-lime-900' },
+  { name: 'Almonds',   category: 'Dry Fruits', desc: 'Premium California and Indian almonds, available in multiple grades.', image: '/dryfruits/almonds.png' },
+  { name: 'Cashews',   category: 'Dry Fruits', desc: 'W180 to W450 grade cashews sourced from coastal farms.',              image: '/dryfruits/cashews.png' },
+  { name: 'Dates',     category: 'Dates',      desc: 'Naturally sweet, hand-picked dates rich in essential nutrients.',      image: '/dryfruits/dates.png'   },
+  { name: 'Pistachios',category: 'Dry Fruits', desc: 'Hand-selected Iranian and Indian pistachios, crisp and flavorful.',   image: '/dryfruits/pista.png'   },
+  { name: 'Walnuts',   category: 'Dry Fruits', desc: 'Rich, buttery walnuts from Jammu & Kashmir, perfect crunch.',         image: '/dryfruits/walnut.png'  },
 ];
 
 export default function ProductsPage() {
@@ -118,11 +107,9 @@ export default function ProductsPage() {
                 key={product.name}
                 className="bg-white rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300 shadow-sm"
               >
-                {/* Image placeholder */}
-                <div className={`h-44 bg-gradient-to-br ${product.bg} flex items-center justify-center`}>
-                  <span className="text-white/20 font-heading font-bold text-5xl">
-                    {product.name[0]}
-                  </span>
+                {/* Product image */}
+                <div className="relative h-44 overflow-hidden">
+                  <Image src={product.image} alt={product.name} fill className="object-cover" sizes="400px" />
                 </div>
                 {/* Content */}
                 <div className="p-5">
