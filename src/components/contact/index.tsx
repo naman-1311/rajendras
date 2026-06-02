@@ -1,204 +1,125 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, CheckCircle } from 'lucide-react';
-
-interface FormState {
-  name: string;
-  phone: string;
-  email: string;
-  company: string;
-  message: string;
-}
-
-const INITIAL: FormState = { name: '', phone: '', email: '', company: '', message: '' };
+import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 
 export default function ContactPage() {
-  const [form, setForm] = useState<FormState>(INITIAL);
-  const [errors, setErrors] = useState<Partial<FormState>>({});
-  const [submitted, setSubmitted] = useState(false);
-
-  const validate = (): boolean => {
-    const e: Partial<FormState> = {};
-    if (!form.name.trim()) e.name = 'Name is required';
-    if (!form.phone.trim()) e.phone = 'Phone is required';
-    if (!form.email.trim()) e.email = 'Email is required';
-    else if (!/\S+@\S+\.\S+/.test(form.email)) e.email = 'Invalid email';
-    if (!form.message.trim()) e.message = 'Message is required';
-    setErrors(e);
-    return Object.keys(e).length === 0;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (validate()) {
-      setSubmitted(true);
-      setForm(INITIAL);
-    }
-  };
-
-  const field = (key: keyof FormState, label: string, type = 'text', rows?: number) => (
-    <div>
-      <label className="text-xs font-semibold uppercase tracking-wider text-[#0a0a0a]/60 font-body mb-1.5 block">
-        {label}
-      </label>
-      {rows ? (
-        <textarea
-          rows={rows}
-          value={form[key]}
-          onChange={(e) => setForm((f) => ({ ...f, [key]: e.target.value }))}
-          className={`w-full px-4 py-3 border rounded-xl text-sm font-body outline-none transition-colors resize-none ${
-            errors[key] ? 'border-red-400' : 'border-[#0a0a0a]/15 focus:border-[#c8a045]'
-          }`}
-          placeholder={label}
-        />
-      ) : (
-        <input
-          type={type}
-          value={form[key]}
-          onChange={(e) => setForm((f) => ({ ...f, [key]: e.target.value }))}
-          className={`w-full px-4 py-3 border rounded-xl text-sm font-body outline-none transition-colors ${
-            errors[key] ? 'border-red-400' : 'border-[#0a0a0a]/15 focus:border-[#c8a045]'
-          }`}
-          placeholder={label}
-        />
-      )}
-      {errors[key] && <p className="text-red-500 text-xs mt-1 font-body">{errors[key]}</p>}
-    </div>
-  );
+  const whatsappMessage = encodeURIComponent("Hello! I'm interested in your dry fruits and spices. I'd like to make an inquiry.");
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-[#0a0a0a] pt-32 pb-20">
-        <div className="w-full pl-[75px] pr-6 lg:pl-[100px] lg:pr-12 text-center">
-          <motion.p
+      {/* Hero — full bleed with left-to-right overlay */}
+      <section
+        className="relative min-h-[640px] lg:min-h-screen flex items-center overflow-hidden bg-[#050505]"
+      >
+        {/* Background image */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url('/images/contact%20us.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        {/* Left-to-right dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/10" />
+
+        <div className="relative z-10 w-full pl-[75px] pr-6 pt-24 pb-16 lg:pl-[100px] lg:pr-12">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-xs font-semibold tracking-widest uppercase text-[#c8a045] mb-4 font-body"
+            className="max-w-[540px]"
           >
-            Get in Touch
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl lg:text-7xl font-semibold text-white font-heading"
-          >
-            Contact Us
-          </motion.h1>
+            <p className="mb-4 font-body text-[11px] font-black uppercase tracking-[0.18em] text-[#4d9de0]">
+              Get in Touch
+            </p>
+            <h1 className="mb-6 font-heading text-[48px] font-semibold leading-[1.05] text-white sm:text-[60px] lg:text-[72px]">
+              Let's Build a<br />
+              <span className="text-[#4d9de0]">Partnership.</span>
+            </h1>
+            <p className="mb-10 font-body text-[15px] leading-[1.7] text-white/70 max-w-[420px]">
+              Whether you need bulk orders, premium custom packaging, or just have a question about our dry fruits and spices, our team is ready to assist you.
+            </p>
+            <button
+              onClick={() => document.getElementById('contact-details')?.scrollIntoView({ behavior: 'smooth' })}
+              className="inline-flex items-center gap-4 border border-white/40 px-7 py-3.5 font-body text-[12px] font-semibold uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+            >
+              Contact Information
+              <ArrowRight size={14} />
+            </button>
+          </motion.div>
         </div>
       </section>
 
-      {/* Form + Details */}
-      <section className="bg-[#f5f0e8] py-20 lg:py-28">
-        <div className="w-full pl-[75px] pr-6 lg:pl-[100px] lg:pr-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+      {/* Contact Details Section */}
+      <section id="contact-details" className="bg-[#050505] py-20 lg:py-32 relative">
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        
+        <div className="w-full pl-[75px] pr-6 lg:pl-[100px] lg:pr-12 max-w-[1200px] mx-auto">
+          
+          <div className="text-center mb-16 lg:mb-24">
+            <h2 className="text-[36px] lg:text-[48px] font-medium text-white font-heading mb-5">We're Here to Help</h2>
+            <p className="text-white/60 font-body text-[16px] max-w-2xl mx-auto leading-relaxed">
+              Skip the forms. Reach out to us directly through WhatsApp, give us a call, or visit our store in Chennai. We guarantee a fast and personal response to all inquiries.
+            </p>
+          </div>
 
-            {/* Left — Form */}
-            <div className="bg-white rounded-2xl p-8 lg:p-10 shadow-sm">
-              <h2 className="text-2xl font-medium text-[#0a0a0a] font-heading mb-6">Send Us a Message</h2>
-
-              {submitted ? (
-                <div className="flex flex-col items-center justify-center py-12 text-center">
-                  <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-5">
-                    <CheckCircle size={32} className="text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-medium text-[#0a0a0a] font-heading mb-2">Message Sent!</h3>
-                  <p className="text-[#0a0a0a]/60 font-body text-sm mb-6">
-                    Thank you for reaching out. Our team will get back to you within 24 hours.
-                  </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="text-[#c8a045] text-sm font-semibold font-body hover:underline"
-                  >
-                    Send another message
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    {field('name', 'Your Name')}
-                    {field('phone', 'Phone Number', 'tel')}
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    {field('email', 'Email Address', 'email')}
-                    {field('company', 'Company Name')}
-                  </div>
-                  {field('message', 'Your Message', 'text', 5)}
-                  <button
-                    type="submit"
-                    className="w-full bg-[#0a0a0a] hover:bg-[#c8a045] text-white font-semibold py-3.5 rounded-xl text-sm transition-colors duration-200 font-body"
-                  >
-                    Send Message
-                  </button>
-                </form>
-              )}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-20">
+            {/* Phone Card */}
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-10 flex flex-col items-center text-center hover:bg-white/10 transition-colors duration-300 group">
+              <div className="w-16 h-16 rounded-full bg-[#c8a045]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Phone size={24} className="text-[#c8a045]" />
+              </div>
+              <p className="text-[11px] font-bold uppercase tracking-wider text-white/40 font-body mb-2">Call Us Directly</p>
+              <p className="text-white font-body text-[18px] font-semibold tracking-wide">+91 91760 48429</p>
+            </div>
+            
+            {/* Email Card */}
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-10 flex flex-col items-center text-center hover:bg-white/10 transition-colors duration-300 group">
+              <div className="w-16 h-16 rounded-full bg-[#c8a045]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Mail size={24} className="text-[#c8a045]" />
+              </div>
+              <p className="text-[11px] font-bold uppercase tracking-wider text-white/40 font-body mb-2">Send an Email</p>
+              <p className="text-white font-body text-[16px] font-semibold tracking-wide">gururajendras@yahoo.com</p>
             </div>
 
-            {/* Right — Contact Details */}
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-2xl font-medium text-[#0a0a0a] font-heading mb-6">Contact Details</h2>
-                <div className="space-y-5">
-                  <div className="flex items-start gap-4">
-                    <div className="w-11 h-11 rounded-full bg-[#0a0a0a] flex items-center justify-center flex-shrink-0">
-                      <Phone size={16} className="text-[#c8a045]" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-wider text-[#0a0a0a]/40 font-body mb-1">Phone</p>
-                      <p className="text-[#0a0a0a] font-body text-sm">+91 91760 48429</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-11 h-11 rounded-full bg-[#0a0a0a] flex items-center justify-center flex-shrink-0">
-                      <Mail size={16} className="text-[#c8a045]" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-wider text-[#0a0a0a]/40 font-body mb-1">Email</p>
-                      <p className="text-[#0a0a0a] font-body text-sm">gururajendras@yahoo.com</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-11 h-11 rounded-full bg-[#0a0a0a] flex items-center justify-center flex-shrink-0">
-                      <MapPin size={16} className="text-[#c8a045]" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-wider text-[#0a0a0a]/40 font-body mb-1">Address</p>
-                      <p className="text-[#0a0a0a] font-body text-sm leading-relaxed">
-                        180/2, Govindappa Naicken St, kothawal bazaar,<br />Seven Wells South, George Town,<br />Chennai, Tamil Nadu 600001
-                      </p>
-                    </div>
-                  </div>
-                </div>
+            {/* Address Card */}
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-10 flex flex-col items-center text-center hover:bg-white/10 transition-colors duration-300 group">
+              <div className="w-16 h-16 rounded-full bg-[#c8a045]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <MapPin size={24} className="text-[#c8a045]" />
               </div>
-
-              {/* WhatsApp CTA */}
-              <a
-                href="https://wa.me/919176048429"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-green-600 hover:bg-green-500 text-white px-6 py-4 rounded-xl transition-colors"
-              >
-                <Image src="/svg/whatsapp.svg" alt="WhatsApp" width={22} height={22} />
-                <div>
-                  <p className="font-semibold font-body text-sm">Chat on WhatsApp</p>
-                  <p className="text-white/70 text-xs font-body">Fastest response — usually within 1 hour</p>
-                </div>
-              </a>
-
-              {/* Map placeholder */}
-              <div className="bg-[#e8e0d0] rounded-2xl h-52 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin size={28} className="text-[#c8a045] mx-auto mb-2" />
-                  <p className="text-[#0a0a0a]/50 text-sm font-body font-semibold">Visit Us</p>
-                  <p className="text-[#0a0a0a]/30 text-xs font-body mt-1">George Town, Chennai</p>
-                </div>
-              </div>
+              <p className="text-[11px] font-bold uppercase tracking-wider text-white/40 font-body mb-2">Visit Our Store</p>
+              <p className="text-white/80 font-body text-[14px] leading-relaxed">
+                180/2, Govindappa Naicken St,<br />kothawal bazaar, George Town,<br />Chennai 600001
+              </p>
             </div>
           </div>
+
+          {/* Huge WhatsApp CTA */}
+          <div className="bg-[#25D366]/10 border border-[#25D366]/20 rounded-3xl p-10 lg:p-16 text-center relative overflow-hidden group">
+            <div className="absolute inset-0 bg-[#25D366]/5 group-hover:bg-[#25D366]/10 transition-colors duration-500" />
+            
+            <div className="relative z-10 flex flex-col items-center">
+              <div className="w-20 h-20 rounded-full bg-[#25D366]/20 flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(37,211,102,0.2)]">
+                <Image src="/svg/whatsapp.svg" alt="WhatsApp" width={36} height={36} className="brightness-0 invert sepia saturate-[10000%] hue-rotate-[90deg]" />
+              </div>
+              <h3 className="text-[32px] lg:text-[44px] font-medium text-white font-heading mb-5">Chat with us instantly</h3>
+              <p className="text-white/70 font-body text-[16px] max-w-xl mx-auto mb-10 leading-relaxed">
+                Have a quick question about pricing, bulk orders, or product availability? Send us a message on WhatsApp for the fastest response.
+              </p>
+              <a
+                href={`https://wa.me/919176048429?text=${whatsappMessage}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-4 bg-[#25D366] hover:bg-[#20bd5a] text-black font-bold uppercase tracking-wider px-10 py-5 rounded-full text-[14px] transition-transform hover:scale-105 duration-300 font-body shadow-[0_0_40px_rgba(37,211,102,0.4)]"
+              >
+                <Image src="/svg/whatsapp.svg" alt="WhatsApp" width={20} height={20} className="brightness-0" />
+                Start a Conversation
+              </a>
+            </div>
+          </div>
+
         </div>
       </section>
     </>

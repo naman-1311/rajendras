@@ -43,6 +43,7 @@ const AboutSection = () => {
             className="relative hidden min-h-[300px] items-center justify-center overflow-visible lg:flex"
           >
             <Image
+              unoptimized
               src="/images/RS_text.png"
               alt="RS Monogram"
               width={500}

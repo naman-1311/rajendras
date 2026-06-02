@@ -9,7 +9,7 @@ const LocationSection = () => {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="bg-white py-24 lg:py-28" ref={ref}>
+    <section id="location-map" className="bg-white py-24 lg:py-28" ref={ref}>
       <div className="w-full pl-[75px] pr-6 lg:pl-[100px] lg:pr-12">
         
         {/* Heading */}

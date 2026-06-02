@@ -1,4 +1,5 @@
 import LocationSection from '@/components/home/location-section';
+import FindUsHero from '@/components/find-us/hero';
 
 export const metadata = {
   title: 'Find Us | Rajendra\'s',
@@ -7,7 +8,8 @@ export const metadata = {
 
 export default function FindUsPage() {
   return (
-    <main className="min-h-screen pt-[72px]">
+    <main className="min-h-screen">
+      <FindUsHero />
       <LocationSection />
     </main>
   );

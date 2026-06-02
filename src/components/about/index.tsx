@@ -69,45 +69,46 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* Hero — split layout: left text, right image */}
-      <section className="grid min-h-[540px] grid-cols-1 lg:grid-cols-2 bg-[#050505] pt-16 lg:pt-0">
-        {/* Left — text content */}
-        <div className="flex items-center bg-[#050505] px-[75px] py-20 lg:px-[100px] lg:py-0 lg:pt-28">
+      {/* Hero — full bleed with left-to-right overlay */}
+      <section className="relative min-h-[640px] lg:min-h-screen flex items-center bg-[#050505] pt-16 lg:pt-0 overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/about-us.png"
+          alt="Premium dry fruits and spices"
+          fill
+          priority
+          quality={80}
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        {/* Left-to-right gradient overlay — dark on the left (text area), fades to transparent on right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/10" />
+
+        {/* Text content */}
+        <div className="relative z-10 w-full pl-[75px] pr-6 py-28 lg:pl-[100px] lg:pr-12">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.65, ease: 'easeOut' }}
-            className="max-w-[520px]"
+            className="max-w-[560px]"
           >
-            <p className="mb-5 font-body text-[12px] font-black uppercase tracking-[0.08em] text-[#d1a326]">
+            <p className="mb-5 font-body text-[12px] font-black uppercase tracking-[0.08em] text-[#4d9de0]">
               About Rajendra&apos;s
             </p>
-            <h1 className="mb-6 font-heading text-[40px] font-semibold leading-[1.05] text-white sm:text-[50px] lg:text-[56px]">
+            <h1 className="mb-6 font-heading text-[40px] font-semibold leading-[1.05] text-white sm:text-[50px] lg:text-[64px]">
               Trusted by Businesses.<br />Chosen for Quality.
             </h1>
-            <p className="mb-9 font-body text-[15px] leading-[1.65] text-white/75">
+            <p className="mb-9 font-body text-[15px] leading-[1.65] text-white/75 max-w-[480px]">
               With over 30 years of experience in the dry fruits and spices industry, Rajendra&apos;s has become a trusted name among businesses across India. Our commitment to quality, consistency, and customer satisfaction sets us apart.
             </p>
             <Link
-              href="/quality"
-              className="inline-flex items-center gap-6 rounded-[4px] bg-[#0869bd] px-7 py-4 font-body text-[12px] font-medium uppercase tracking-[0.05em] text-white transition-colors hover:bg-[#1678cc]"
+              href="/products"
+              className="inline-flex items-center gap-3 rounded-[8px] bg-[#1a56db] px-7 py-4 font-body text-[12px] font-medium uppercase tracking-[0.05em] text-white transition-colors hover:bg-[#1e63f5]"
             >
-              Our Journey
+              Explore Products
               <ArrowRight size={16} />
             </Link>
           </motion.div>
-        </div>
-
-        {/* Right — image */}
-        <div className="relative min-h-[320px] lg:min-h-0">
-          <Image
-            src="/images/nuts.png"
-            alt="Premium dry fruits and spices"
-            fill
-            priority
-            className="object-cover object-[54%_50%]"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
         </div>
       </section>
 
@@ -117,7 +118,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:divide-x lg:divide-black/15">
             {STATS.map(({ icon: Icon, value, label }, i) => (
               <motion.div
-                key={value}
+                key={label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={statsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
@@ -174,23 +175,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Gallery strip */}
-      <section className="bg-[#070707]">
-        <div className="grid min-h-[280px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
-          {GALLERY.map(({ src, alt, position }, i) => (
-            <div key={`${src}-${i}`} className="relative min-h-[280px] overflow-hidden border border-white/10 group">
-              <Image
-                src={src}
-                alt={alt}
-                fill
-                className={`object-cover transition-transform duration-500 group-hover:scale-105 ${position}`}
-                sizes="(max-width: 1024px) 50vw, 20vw"
-              />
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
-            </div>
-          ))}
-        </div>
-      </section>
     </>
   );
 }

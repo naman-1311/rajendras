@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
 
 const CATEGORIES = ['All', 'Dry Fruits', 'Spices', 'Seeds', 'Herbs', 'Dates', 'Gift Packs'];
 
@@ -34,15 +35,52 @@ export default function ProductsPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-[#0a0a0a] pt-32 pb-20">
-        <div className="w-full pl-[75px] pr-6 lg:pl-[100px] lg:pr-12 text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase text-[#c8a045] mb-4 font-body">
-            What We Offer
-          </p>
-          <h1 className="text-5xl lg:text-7xl font-semibold text-white font-heading">
-            Our Products
-          </h1>
+      {/* Hero — full bleed with left-to-right overlay */}
+      <section
+        className="relative min-h-[640px] lg:min-h-screen flex items-center overflow-hidden bg-[#050505]"
+      >
+        {/* Background image — slightly zoomed out via oversized container */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '-8%',
+            left: '-8%',
+            right: '-8%',
+            bottom: '-8%',
+            backgroundImage: "url('/images/products.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        {/* Left-to-right dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/65 to-black/5" />
+
+        {/* Text content */}
+        <div className="relative z-10 w-full pl-[75px] pr-6 pt-32 pb-20 lg:pl-[100px] lg:pr-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            className="max-w-[540px]"
+          >
+            <p className="mb-6 font-body text-[11px] font-black uppercase tracking-[0.18em] text-[#4d9de0]">
+              Best Sellers
+            </p>
+            <h1 className="mb-6 font-heading text-[48px] font-semibold leading-[1.05] text-white sm:text-[60px] lg:text-[72px]">
+              Handpicked.<br />
+              <span className="text-[#4d9de0]">Loved the Most.</span>
+            </h1>
+            <p className="mb-10 font-body text-[15px] leading-[1.7] text-white/70 max-w-[380px]">
+              Explore our customer favorites — selected for their unmatched taste, quality, and freshness.
+            </p>
+            <a
+              href="#products-grid"
+              className="inline-flex items-center gap-4 border border-white/40 px-7 py-3.5 font-body text-[12px] font-semibold uppercase tracking-[0.1em] text-white transition-colors hover:bg-white/10"
+            >
+              Explore Best Sellers
+              <ArrowRight size={14} />
+            </a>
+          </motion.div>
         </div>
       </section>
 
