@@ -11,7 +11,7 @@ const AboutSection = () => {
 
   return (
     <section className="bg-[#f3eee7] py-24 lg:py-32" ref={ref}>
-      <div className="w-full pl-[75px] pr-6 lg:pl-[100px] lg:pr-12">
+      <div className="w-full pl-6 pr-6 sm:pl-10 lg:pl-[100px] lg:pr-12">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[520px_1fr] lg:gap-20">
 
           {/* Left content */}
@@ -19,11 +19,12 @@ const AboutSection = () => {
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, ease: 'easeOut' }}
+            className="relative"
           >
             <p className="mb-6 font-body text-[13px] font-semibold uppercase tracking-[0.16em] text-[#4d9de0]">
               About Rajendra&apos;s
             </p>
-            <h2 className="mb-8 font-heading text-[48px] font-medium leading-[1.05] text-[#0a0a0a] lg:text-[58px]">
+            <h2 className="mb-8 font-heading text-[32px] font-medium leading-[1.05] text-[#0a0a0a] sm:text-[42px] lg:text-[58px]">
               Trusted by Businesses.<br />Chosen for Quality.
             </h2>
             <p className="mb-10 max-w-[560px] font-body text-[16px] leading-[1.7] text-[#0a0a0a]/78">
@@ -32,6 +33,17 @@ const AboutSection = () => {
               consistency has made us the preferred partner for thousands of businesses.
             </p>
 
+            {/* RS monogram — mobile only, full background */}
+            <div className="absolute inset-0 lg:hidden pointer-events-none flex items-center justify-center">
+              <Image
+                unoptimized
+                src="/images/RS_text.png"
+                alt="RS Monogram"
+                width={400}
+                height={450}
+                className="h-full w-auto max-w-[80%] object-contain opacity-25"
+              />
+            </div>
 
           </motion.div>
 

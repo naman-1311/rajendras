@@ -10,7 +10,7 @@ const LocationSection = () => {
 
   return (
     <section id="location-map" className="bg-white py-24 lg:py-28" ref={ref}>
-      <div className="w-full pl-[75px] pr-6 lg:pl-[100px] lg:pr-12">
+      <div className="w-full pl-6 pr-6 sm:pl-10 lg:pl-[100px] lg:pr-12">
         
         {/* Heading */}
         <motion.div

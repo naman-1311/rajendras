@@ -85,7 +85,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/10" />
 
         {/* Text content */}
-        <div className="relative z-10 w-full pl-[75px] pr-6 py-28 lg:pl-[100px] lg:pr-12">
+        <div className="relative z-10 w-full pl-6 pr-6 py-28 sm:pl-10 lg:pl-[100px] lg:pr-12">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             animate={{ opacity: 1, x: 0 }}
@@ -95,7 +95,7 @@ export default function AboutPage() {
             <p className="mb-5 font-body text-[12px] font-black uppercase tracking-[0.08em] text-[#4d9de0]">
               About Rajendra&apos;s
             </p>
-            <h1 className="mb-6 font-heading text-[40px] font-semibold leading-[1.05] text-white sm:text-[50px] lg:text-[64px]">
+            <h1 className="mb-6 font-heading text-[32px] font-semibold leading-[1.05] text-white sm:text-[46px] lg:text-[64px]">
               Trusted by Businesses.<br />Chosen for Quality.
             </h1>
             <p className="mb-9 font-body text-[15px] leading-[1.65] text-white/75 max-w-[480px]">
@@ -114,7 +114,7 @@ export default function AboutPage() {
 
       {/* Stats bar */}
       <section className="bg-[#f3eee7] py-16 lg:py-20" ref={statsRef}>
-        <div className="w-full pl-[75px] pr-6 lg:pl-[100px] lg:pr-12">
+        <div className="w-full pl-6 pr-6 sm:pl-10 lg:pl-[100px] lg:pr-12">
           <div className="grid grid-cols-2 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:divide-x lg:divide-black/15">
             {STATS.map(({ icon: Icon, value, label }, i) => (
               <motion.div
@@ -139,7 +139,7 @@ export default function AboutPage() {
 
       {/* Values — full-width, header left-aligned, 5-col grid */}
       <section className="bg-[#070b0c] py-20 lg:py-28" ref={valuesRef}>
-        <div className="w-full pl-[75px] pr-6 lg:pl-[100px] lg:pr-12">
+        <div className="w-full pl-6 pr-6 sm:pl-10 lg:pl-[100px] lg:pr-12">
           {/* Header — left aligned */}
           <div className="mb-14">
             <p className="mb-3 font-body text-[12px] font-black uppercase tracking-[0.08em] text-[#d1a326]">

@@ -29,11 +29,11 @@ export default function GalleryPage() {
     <>
       {/* Hero */}
       <section className="bg-[#0a0a0a] pt-32 pb-20">
-        <div className="w-full pl-[75px] pr-6 lg:pl-[100px] lg:pr-12 text-center">
+        <div className="w-full pl-6 pr-6 sm:pl-10 lg:pl-[100px] lg:pr-12 text-center">
           <p className="text-xs font-semibold tracking-widest uppercase text-[#c8a045] mb-4 font-body">
             Visual Tour
           </p>
-          <h1 className="text-5xl lg:text-7xl font-semibold text-white font-heading">
+          <h1 className="text-[36px] sm:text-5xl lg:text-7xl font-semibold text-white font-heading">
             Our Gallery
           </h1>
         </div>
@@ -41,7 +41,7 @@ export default function GalleryPage() {
 
       {/* Filter + Grid */}
       <section className="bg-[#f5f0e8] py-24 lg:py-32">
-        <div className="w-full pl-[75px] pr-6 lg:pl-[100px] lg:pr-12">
+        <div className="w-full pl-6 pr-6 sm:pl-10 lg:pl-[100px] lg:pr-12">
 
           {/* Filter tabs */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">

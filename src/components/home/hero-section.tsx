@@ -21,11 +21,22 @@ const HeroSection = () => {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-[#050505]">
       <div className="absolute inset-0">
+        {/* Mobile image */}
+        <Image
+          src="/mobile-image/hero.png"
+          alt="Premium dry fruits"
+          fill
+          className="object-cover object-center sm:hidden"
+          priority
+          quality={80}
+          sizes="100vw"
+        />
+        {/* Desktop image */}
         <Image
           src="/images/hero_sec.png"
           alt="Premium dry fruits"
           fill
-          className="object-cover object-center"
+          className="hidden object-cover object-center sm:block"
           priority
           quality={80}
           sizes="100vw"
@@ -34,7 +45,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/72 via-transparent to-black/18" />
       </div>
 
-      <div className="relative z-10 w-full pl-[75px] pr-6 pt-32 pb-16 lg:pl-[100px] lg:pr-12">
+      <div className="relative z-10 w-full pl-6 pr-6 pt-28 pb-16 sm:pl-10 lg:pl-[100px] lg:pr-12">
         <motion.div
           variants={container}
           initial="hidden"
@@ -43,14 +54,14 @@ const HeroSection = () => {
         >
           <motion.h1
             variants={item}
-            className="mb-5 font-heading text-[48px] font-semibold leading-[0.9] text-white sm:text-[60px] lg:text-[72px]"
+            className="mb-5 font-heading text-[38px] font-semibold leading-[0.9] text-white sm:text-[52px] lg:text-[72px]"
           >
             RAJENDRA&apos;S
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="mb-4 font-heading text-[20px] font-medium uppercase leading-[1.25] text-[#4d9de0] sm:text-[24px] lg:text-[36px]"
+            className="mb-4 font-heading text-[18px] font-medium uppercase leading-[1.25] text-[#4d9de0] sm:text-[22px] lg:text-[36px]"
           >
             RICH IN TASTE.<br />BEST IN QUALITY.
           </motion.p>

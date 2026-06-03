@@ -45,7 +45,7 @@ export default function ProductsPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/65 to-black/5" />
 
         {/* Text content */}
-        <div className="relative z-10 w-full pl-[75px] pr-6 pt-32 pb-20 lg:pl-[100px] lg:pr-12">
+        <div className="relative z-10 w-full pl-6 pr-6 pt-32 pb-20 sm:pl-10 lg:pl-[100px] lg:pr-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ export default function ProductsPage() {
             <p className="mb-6 font-body text-[11px] font-black uppercase tracking-[0.18em] text-[#4d9de0]">
               Best Sellers
             </p>
-            <h1 className="mb-6 font-heading text-[48px] font-semibold leading-[1.05] text-white sm:text-[60px] lg:text-[72px]">
+            <h1 className="mb-6 font-heading text-[36px] font-semibold leading-[1.05] text-white sm:text-[52px] lg:text-[72px]">
               Handpicked.<br />
               <span className="text-[#4d9de0]">Loved the Most.</span>
             </h1>
@@ -75,7 +75,7 @@ export default function ProductsPage() {
 
       {/* Filter + Grid */}
       <section className="bg-[#f5f0e8] py-24 lg:py-32">
-        <div className="w-full pl-[75px] pr-6 lg:pl-[100px] lg:pr-12">
+        <div className="w-full pl-6 pr-6 sm:pl-10 lg:pl-[100px] lg:pr-12">
 
           {/* Category filter */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">

@@ -25,7 +25,7 @@ export default function ContactPage() {
         {/* Left-to-right dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/10" />
 
-        <div className="relative z-10 w-full pl-[75px] pr-6 pt-24 pb-16 lg:pl-[100px] lg:pr-12">
+        <div className="relative z-10 w-full pl-6 pr-6 pt-24 pb-16 sm:pl-10 lg:pl-[100px] lg:pr-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ export default function ContactPage() {
             <p className="mb-4 font-body text-[11px] font-black uppercase tracking-[0.18em] text-[#4d9de0]">
               Get in Touch
             </p>
-            <h1 className="mb-6 font-heading text-[48px] font-semibold leading-[1.05] text-white sm:text-[60px] lg:text-[72px]">
+            <h1 className="mb-6 font-heading text-[36px] font-semibold leading-[1.05] text-white sm:text-[52px] lg:text-[72px]">
               Let's Build a<br />
               <span className="text-[#4d9de0]">Partnership.</span>
             </h1>
@@ -56,7 +56,7 @@ export default function ContactPage() {
       <section id="contact-details" className="bg-[#050505] py-20 lg:py-32 relative">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         
-        <div className="w-full pl-[75px] pr-6 lg:pl-[100px] lg:pr-12 max-w-[1200px] mx-auto">
+        <div className="w-full pl-6 pr-6 sm:pl-10 lg:pl-[100px] lg:pr-12 max-w-[1200px] mx-auto">
           
           <div className="text-center mb-16 lg:mb-24">
             <h2 className="text-[36px] lg:text-[48px] font-medium text-white font-heading mb-5">We're Here to Help</h2>

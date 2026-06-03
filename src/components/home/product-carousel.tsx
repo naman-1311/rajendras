@@ -60,7 +60,7 @@ const ProductCarousel = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/18" />
       </div>
 
-      <div className="relative w-full pl-[75px] pr-6 lg:pl-[100px] lg:pr-12">
+      <div className="relative w-full pl-6 pr-6 sm:pl-10 lg:pl-[100px] lg:pr-12">
         <div className="flex min-h-[80vh] items-center">
           <div className="max-w-[560px] py-24 lg:py-32">
             <p className="mb-2 font-body text-[14px] font-medium uppercase tracking-[0.05em] text-[#b08d43]">
@@ -75,10 +75,10 @@ const ProductCarousel = () => {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
               >
-                <h2 className="mb-4 font-heading text-[72px] font-normal uppercase leading-[0.9] text-[#a59582] sm:text-[104px] lg:text-[130px]">
+                <h2 className="mb-4 font-heading text-[52px] font-normal uppercase leading-[0.9] text-[#a59582] sm:text-[80px] lg:text-[130px]">
                   {product.name}
                 </h2>
-                <p className="mb-8 max-w-[340px] font-body text-[17px] leading-[1.6] text-[#b3b3b3]">
+                <p className="mb-8 max-w-[340px] font-body text-[15px] leading-[1.6] text-[#b3b3b3] lg:text-[17px]">
                   {product.tagline}
                 </p>
                 <Link

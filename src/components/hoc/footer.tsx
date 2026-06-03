@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Share2, MessageCircle, Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 const WA_ICON = () => <Image src="/svg/whatsapp.svg" alt="WhatsApp" width={16} height={16} />;
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
       {/* Subtle Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[300px] bg-[#4d9de0]/10 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="relative z-10 w-full pl-[75px] pr-6 pt-24 pb-10 lg:pl-[100px] lg:pr-12">
+      <div className="relative z-10 w-full pl-6 pr-6 pt-16 pb-10 sm:pl-10 sm:pt-20 lg:pl-[100px] lg:pr-12 lg:pt-24">
 
         {/* Top CTA Banner */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center pb-16 mb-16 border-b border-white/10">
