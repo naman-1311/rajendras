@@ -21,7 +21,7 @@ const STATS = [
   { icon: ShieldCheck, value: '30+', label: 'Years of\nExperience' },
   { icon: Users, value: '500+', label: 'Happy\nClients' },
   { icon: Package, value: '250+', label: 'Product\nVarieties' },
-  { icon: Leaf, value: '100%', label: 'Farm Direct\nSourcing' },
+  { icon: Leaf, value: '100%', label: 'Farm Direct\nSourcing', hideOnMobile: true },
   { icon: Handshake, value: '100%', label: 'Quality\nAssured' },
 ];
 
@@ -70,15 +70,25 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero — full bleed with left-to-right overlay */}
-      <section className="relative min-h-[640px] lg:min-h-screen flex items-center bg-[#050505] pt-16 lg:pt-0 overflow-hidden">
-        {/* Background image */}
+      <section className="relative min-h-screen flex items-center bg-[#050505] overflow-hidden">
+        {/* Mobile image */}
+        <Image
+          src="/mobile-image/about.png"
+          alt="Premium dry fruits and spices"
+          fill
+          priority
+          quality={80}
+          className="object-cover object-center sm:hidden"
+          sizes="100vw"
+        />
+        {/* Desktop image */}
         <Image
           src="/images/about-us.png"
           alt="Premium dry fruits and spices"
           fill
           priority
           quality={80}
-          className="object-cover object-center"
+          className="hidden object-cover object-center sm:block"
           sizes="100vw"
         />
         {/* Left-to-right gradient overlay — dark on the left (text area), fades to transparent on right */}
@@ -116,13 +126,13 @@ export default function AboutPage() {
       <section className="bg-[#f3eee7] py-16 lg:py-20" ref={statsRef}>
         <div className="w-full pl-6 pr-6 sm:pl-10 lg:pl-[100px] lg:pr-12">
           <div className="grid grid-cols-2 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:divide-x lg:divide-black/15">
-            {STATS.map(({ icon: Icon, value, label }, i) => (
+            {STATS.map(({ icon: Icon, value, label, hideOnMobile }, i) => (
               <motion.div
                 key={label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={statsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="flex flex-col items-center justify-center py-6 text-center"
+                className={`flex flex-col items-center justify-center py-6 text-center${hideOnMobile ? ' hidden lg:flex' : ''}`}
               >
                 <Icon size={46} className="mb-5 text-[#0b1830]" strokeWidth={1.45} />
                 <p className="font-heading text-[40px] font-semibold leading-none text-[#0b1830]">

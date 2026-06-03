@@ -11,16 +11,27 @@ export default function ContactPage() {
     <>
       {/* Hero — full bleed with left-to-right overlay */}
       <section
-        className="relative min-h-[640px] lg:min-h-screen flex items-center overflow-hidden bg-[#050505]"
+        className="relative min-h-screen flex items-center overflow-hidden bg-[#050505]"
       >
-        {/* Background image */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "url('/images/contact%20us.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
+        {/* Mobile image */}
+        <Image
+          src="/mobile-image/contact.png"
+          alt="Contact us"
+          fill
+          priority
+          quality={80}
+          className="object-cover object-center sm:hidden"
+          sizes="100vw"
+        />
+        {/* Desktop image */}
+        <Image
+          src="/images/contact us.png"
+          alt="Contact us"
+          fill
+          priority
+          quality={80}
+          className="hidden object-cover object-center sm:block"
+          sizes="100vw"
         />
         {/* Left-to-right dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/10" />
@@ -68,8 +79,8 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-20">
             {/* Phone Card */}
             <div className="bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-10 flex flex-col items-center text-center hover:bg-white/10 transition-colors duration-300 group">
-              <div className="w-16 h-16 rounded-full bg-[#c8a045]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Phone size={24} className="text-[#c8a045]" />
+              <div className="w-16 h-16 rounded-full bg-[#4d9de0]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Phone size={24} className="text-[#4d9de0]" />
               </div>
               <p className="text-[11px] font-bold uppercase tracking-wider text-white/40 font-body mb-2">Call Us Directly</p>
               <p className="text-white font-body text-[18px] font-semibold tracking-wide">+91 91760 48429</p>
@@ -77,8 +88,8 @@ export default function ContactPage() {
             
             {/* Email Card */}
             <div className="bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-10 flex flex-col items-center text-center hover:bg-white/10 transition-colors duration-300 group">
-              <div className="w-16 h-16 rounded-full bg-[#c8a045]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Mail size={24} className="text-[#c8a045]" />
+              <div className="w-16 h-16 rounded-full bg-[#4d9de0]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Mail size={24} className="text-[#4d9de0]" />
               </div>
               <p className="text-[11px] font-bold uppercase tracking-wider text-white/40 font-body mb-2">Send an Email</p>
               <p className="text-white font-body text-[16px] font-semibold tracking-wide">gururajendras@yahoo.com</p>
@@ -86,8 +97,8 @@ export default function ContactPage() {
 
             {/* Address Card */}
             <div className="bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-10 flex flex-col items-center text-center hover:bg-white/10 transition-colors duration-300 group">
-              <div className="w-16 h-16 rounded-full bg-[#c8a045]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <MapPin size={24} className="text-[#c8a045]" />
+              <div className="w-16 h-16 rounded-full bg-[#4d9de0]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <MapPin size={24} className="text-[#4d9de0]" />
               </div>
               <p className="text-[11px] font-bold uppercase tracking-wider text-white/40 font-body mb-2">Visit Our Store</p>
               <p className="text-white/80 font-body text-[14px] leading-relaxed">

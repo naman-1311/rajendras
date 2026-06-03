@@ -1,21 +1,33 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { MapPin } from 'lucide-react';
 
 export default function FindUsHero() {
   return (
     <section
-      className="relative min-h-[640px] lg:min-h-screen flex items-center overflow-hidden bg-[#050505]"
+      className="relative min-h-screen flex items-center overflow-hidden bg-[#050505]"
     >
-      {/* Background image */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: "url('/images/find-us.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
+      {/* Mobile image */}
+      <Image
+        src="/mobile-image/find.png"
+        alt="Come visit our store"
+        fill
+        priority
+        quality={80}
+        className="object-cover object-center sm:hidden"
+        sizes="100vw"
+      />
+      {/* Desktop image */}
+      <Image
+        src="/images/find-us.png"
+        alt="Come visit our store"
+        fill
+        priority
+        quality={80}
+        className="hidden object-cover object-center sm:block"
+        sizes="100vw"
       />
       {/* Left-to-right dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/10" />

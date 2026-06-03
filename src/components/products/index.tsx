@@ -26,20 +26,27 @@ export default function ProductsPage() {
     <>
       {/* Hero — full bleed with left-to-right overlay */}
       <section
-        className="relative min-h-[640px] lg:min-h-screen flex items-center overflow-hidden bg-[#050505]"
+        className="relative min-h-screen flex items-center overflow-hidden bg-[#050505]"
       >
-        {/* Background image — slightly zoomed out via oversized container */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '-8%',
-            left: '-8%',
-            right: '-8%',
-            bottom: '-8%',
-            backgroundImage: "url('/images/products.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
+        {/* Mobile image */}
+        <Image
+          src="/mobile-image/bestsellers.png"
+          alt="Best sellers"
+          fill
+          priority
+          quality={80}
+          className="object-cover object-center sm:hidden"
+          sizes="100vw"
+        />
+        {/* Desktop image */}
+        <Image
+          src="/images/products.png"
+          alt="Best sellers"
+          fill
+          priority
+          quality={80}
+          className="hidden object-cover object-center sm:block"
+          sizes="100vw"
         />
         {/* Left-to-right dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/65 to-black/5" />
