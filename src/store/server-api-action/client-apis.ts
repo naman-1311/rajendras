@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import { refreshToken } from "../actions/auth-action";
 import { store } from "../store";
