@@ -38,7 +38,7 @@ const Navbar = () => {
         <div className="pl-6 lg:pl-10 flex-shrink-0">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/logo/header logo.png"
+              src="/logo/header logo.webp"
               alt="Rajendra's Logo"
               width={260}
               height={60}

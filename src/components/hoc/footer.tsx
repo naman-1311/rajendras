@@ -39,7 +39,7 @@ const Footer = () => {
           <div className="flex flex-col items-center lg:items-start lg:pr-8 mb-10 lg:mb-0">
             <Link href="/" className="inline-block mb-4 lg:mb-8">
               <Image
-                src="/images/logo-nobg.png"
+                src="/images/logo-nobg.webp"
                 alt="Rajendra's"
                 width={600}
                 height={200}

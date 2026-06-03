@@ -30,7 +30,7 @@ export default function ProductsPage() {
       >
         {/* Mobile image */}
         <Image
-          src="/mobile-image/bestsellers.png"
+          src="/mobile-image/bestsellers.webp"
           alt="Best sellers"
           fill
           priority
@@ -40,7 +40,7 @@ export default function ProductsPage() {
         />
         {/* Desktop image */}
         <Image
-          src="/images/products.png"
+          src="/images/products.webp"
           alt="Best sellers"
           fill
           priority

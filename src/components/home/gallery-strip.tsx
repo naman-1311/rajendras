@@ -3,27 +3,27 @@ import Link from 'next/link';
 
 const TILES = [
   {
-    src: '/images/nuts.png',
+    src: '/images/nuts.webp',
     alt: 'Premium dry fruits',
     caption: 'Dry Fruits',
   },
   {
-    src: '/images/spices1.png',
+    src: '/images/spices1.webp',
     alt: 'Warehouse',
     caption: 'Warehouse',
   },
   {
-    src: '/images/nuts.png',
+    src: '/images/nuts.webp',
     alt: 'Premium packaging',
     caption: 'Packaging',
   },
   {
-    src: '/images/spices1.png',
+    src: '/images/spices1.webp',
     alt: 'Premium spices',
     caption: 'Spices',
   },
   {
-    src: '/images/almond.png',
+    src: '/images/almond.webp',
     alt: 'Pan India delivery',
     caption: 'Delivery',
   },

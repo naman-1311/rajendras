@@ -37,7 +37,7 @@ const AboutSection = () => {
             <div className="absolute inset-0 lg:hidden pointer-events-none flex items-center justify-center">
               <Image
                 unoptimized
-                src="/images/RS_text.png"
+                src="/images/RS_text.webp"
                 alt="RS Monogram"
                 width={400}
                 height={450}
@@ -56,7 +56,7 @@ const AboutSection = () => {
           >
             <Image
               unoptimized
-              src="/images/RS_text.png"
+              src="/images/RS_text.webp"
               alt="RS Monogram"
               width={500}
               height={560}

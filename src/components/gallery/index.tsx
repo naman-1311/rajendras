@@ -7,9 +7,9 @@ import { motion } from 'framer-motion';
 const CATEGORIES = ['All', 'Products', 'Warehouse', 'Packaging', 'Delivery'];
 
 const ITEMS = [
-  { src: '/images/nuts.png', alt: 'Premium dry fruits collection', caption: 'Premium Dry Fruits', category: 'Products', span: 'col-span-2 row-span-2' },
-  { src: '/images/spices1.png', alt: 'Exotic spices spread', caption: 'Premium Spices', category: 'Products', span: '' },
-  { src: '/images/almond.png', alt: 'Fresh almonds in bowl', caption: 'California Almonds', category: 'Products', span: '' },
+  { src: '/images/nuts.webp', alt: 'Premium dry fruits collection', caption: 'Premium Dry Fruits', category: 'Products', span: 'col-span-2 row-span-2' },
+  { src: '/images/spices1.webp', alt: 'Exotic spices spread', caption: 'Premium Spices', category: 'Products', span: '' },
+  { src: '/images/almond.webp', alt: 'Fresh almonds in bowl', caption: 'California Almonds', category: 'Products', span: '' },
   { src: null, alt: 'Our storage warehouse', caption: 'Climate-Controlled Warehouse', category: 'Warehouse', bg: 'from-slate-700 to-slate-900', span: '' },
   { src: null, alt: 'Premium packaging', caption: 'Food-Grade Packaging', category: 'Packaging', bg: 'from-amber-800 to-amber-950', span: '' },
   { src: null, alt: 'Bulk storage facility', caption: 'Bulk Storage', category: 'Warehouse', bg: 'from-zinc-700 to-zinc-900', span: 'col-span-2' },

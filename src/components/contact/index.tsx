@@ -15,7 +15,7 @@ export default function ContactPage() {
       >
         {/* Mobile image */}
         <Image
-          src="/mobile-image/contact.png"
+          src="/mobile-image/contact.webp"
           alt="Contact us"
           fill
           priority
@@ -25,7 +25,7 @@ export default function ContactPage() {
         />
         {/* Desktop image */}
         <Image
-          src="/images/contact us.png"
+          src="/images/contact us.webp"
           alt="Contact us"
           fill
           priority

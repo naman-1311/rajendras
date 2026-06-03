@@ -11,7 +11,7 @@ export default function FindUsHero() {
     >
       {/* Mobile image */}
       <Image
-        src="/mobile-image/find.png"
+        src="/mobile-image/find.webp"
         alt="Come visit our store"
         fill
         priority
@@ -21,7 +21,7 @@ export default function FindUsHero() {
       />
       {/* Desktop image */}
       <Image
-        src="/images/find-us.png"
+        src="/images/find-us.webp"
         alt="Come visit our store"
         fill
         priority

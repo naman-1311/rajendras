@@ -23,7 +23,7 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         {/* Mobile image */}
         <Image
-          src="/mobile-image/hero.png"
+          src="/mobile-image/hero.webp"
           alt="Premium dry fruits"
           fill
           className="object-cover object-center sm:hidden"
@@ -33,7 +33,7 @@ const HeroSection = () => {
         />
         {/* Desktop image */}
         <Image
-          src="/images/hero_sec.png"
+          src="/images/hero_sec.webp"
           alt="Premium dry fruits"
           fill
           className="hidden object-cover object-center sm:block"

@@ -54,11 +54,11 @@ const VALUES = [
 ];
 
 const GALLERY = [
-  { src: '/images/nuts.png', alt: 'Premium walnuts', position: 'object-[20%_55%]' },
-  { src: '/images/spices1.png', alt: 'Premium pistachios', position: 'object-[54%_50%]' },
-  { src: '/images/almond.png', alt: 'Almonds and cashews', position: 'object-[47%_49%]' },
-  { src: '/images/spices1.png', alt: 'Assorted spices', position: 'object-[50%_50%]' },
-  { src: '/images/nuts.png', alt: 'Mixed dry fruits', position: 'object-[73%_52%]' },
+  { src: '/images/nuts.webp', alt: 'Premium walnuts', position: 'object-[20%_55%]' },
+  { src: '/images/spices1.webp', alt: 'Premium pistachios', position: 'object-[54%_50%]' },
+  { src: '/images/almond.webp', alt: 'Almonds and cashews', position: 'object-[47%_49%]' },
+  { src: '/images/spices1.webp', alt: 'Assorted spices', position: 'object-[50%_50%]' },
+  { src: '/images/nuts.webp', alt: 'Mixed dry fruits', position: 'object-[73%_52%]' },
 ];
 
 export default function AboutPage() {
@@ -73,7 +73,7 @@ export default function AboutPage() {
       <section className="relative min-h-screen flex items-center bg-[#050505] overflow-hidden">
         {/* Mobile image */}
         <Image
-          src="/mobile-image/about.png"
+          src="/mobile-image/about.webp"
           alt="Premium dry fruits and spices"
           fill
           priority
@@ -83,7 +83,7 @@ export default function AboutPage() {
         />
         {/* Desktop image */}
         <Image
-          src="/images/about-us.png"
+          src="/images/about-us.webp"
           alt="Premium dry fruits and spices"
           fill
           priority
