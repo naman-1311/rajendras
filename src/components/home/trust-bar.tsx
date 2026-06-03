@@ -9,8 +9,8 @@ const ITEMS = [
   { icon: Truck, label: 'Pan India Delivery' },
 ];
 
-// Duplicate items to create seamless loop
-const TICKER = [...ITEMS, ...ITEMS, ...ITEMS];
+// Duplicate for seamless loop — translate -50% lands exactly on original set
+const TICKER = [...ITEMS, ...ITEMS];
 
 const TrustBar = () => {
   return (
