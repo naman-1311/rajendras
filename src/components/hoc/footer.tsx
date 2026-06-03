@@ -22,7 +22,7 @@ const Footer = () => {
             </p>
           </div>
           <a
-            href="https://wa.me/919176048429"
+            href={`https://wa.me/919176048429?text=${encodeURIComponent("Hi Rajendra's! We're interested in a wholesale partnership. Please share your product catalogue and pricing.")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-8 lg:mt-0 inline-flex items-center gap-3 rounded-[8px] bg-[#1a56db] px-7 py-4 font-body text-[13px] font-semibold uppercase tracking-[0.05em] text-white transition-colors duration-200 hover:bg-[#1e63f5]"
